@@ -46,7 +46,8 @@ export function SiteNav() {
 
   useEffect(() => {
     const onResize = () => {
-      if (window.innerWidth >= 1000) setMenuOpen(false);
+      // Desktop nav takes over at 1200px (see .nav-desktop in globals.css)
+      if (window.innerWidth >= 1200) setMenuOpen(false);
     };
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);

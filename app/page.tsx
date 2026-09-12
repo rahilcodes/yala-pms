@@ -110,7 +110,7 @@ export default function HomePage() {
           <div className="hero-photo" style={{ position: "relative", color: "#C9CFDA" }}>
             <ImagePlaceholder onDark caption="Photo: managed Irvine single-family home at dusk" priority />
           </div>
-          <div style={{ padding: "clamp(28px,4vw,44px)", display: "flex", flexDirection: "column", gap: 20, flex: 1 }}>
+          <div style={{ padding: "clamp(28px,4vw,44px)", display: "flex", flexDirection: "column", gap: 20, flex: "0 0 auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 12, letterSpacing: ".24em", textTransform: "uppercase", color: "#BFA163" }}>
               <span style={{ width: 8, height: 8, background: "#BFA163", borderRadius: "50%" }} />
               I&apos;m a Property Owner
@@ -145,7 +145,7 @@ export default function HomePage() {
           <div className="hero-photo" style={{ position: "relative" }}>
             <ImagePlaceholder caption="Photo: resident at the door of an Irvine rental" />
           </div>
-          <div style={{ padding: "clamp(28px,4vw,44px)", display: "flex", flexDirection: "column", gap: 20, flex: 1 }}>
+          <div style={{ padding: "clamp(28px,4vw,44px)", display: "flex", flexDirection: "column", gap: 20, flex: "0 0 auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 12, letterSpacing: ".24em", textTransform: "uppercase", color: "#7A6230" }}>
               <span style={{ width: 8, height: 8, background: "#0B1F3A", borderRadius: "50%" }} />
               I&apos;m a Tenant / Resident

@@ -8,6 +8,8 @@ type Props = {
   /** darker stripe palette for use on navy/dark panels */
   onDark?: boolean;
   priority?: boolean;
+  /** hide the visible caption chip (keeps the accessible label) — e.g. hero backgrounds */
+  hideCaption?: boolean;
 };
 
 /**
@@ -21,6 +23,7 @@ export function ImagePlaceholder({
   alt,
   onDark = false,
   priority = false,
+  hideCaption = false,
 }: Props) {
   if (src) {
     return (
@@ -52,6 +55,7 @@ export function ImagePlaceholder({
         padding: "16px",
       }}
     >
+      {hideCaption ? null : (
       <div
         style={{
           background: onDark ? "rgba(7,21,40,.75)" : "#fff",
@@ -67,6 +71,7 @@ export function ImagePlaceholder({
       >
         {caption}
       </div>
+      )}
     </div>
   );
 }

@@ -100,28 +100,22 @@ const leased = [
 export default function HomePage() {
   return (
     <main>
-      {/* Hero: split gateway */}
-      <section
-        aria-label="Choose your path"
-        style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(340px,1fr))" }}
-      >
+      {/* Hero: split gateway (content-led, sizes to content) */}
+      <section aria-label="Choose your path" className="hero-grid">
         {/* Owner panel (navy) */}
-        <div className="hero-panel" style={{ background: "#0B1F3A", display: "flex", flexDirection: "column" }}>
-          <div className="hero-photo" style={{ position: "relative", color: "#C9CFDA" }}>
-            <ImagePlaceholder onDark caption="Photo: managed Irvine single-family home at dusk" priority />
-          </div>
-          <div style={{ padding: "clamp(28px,4vw,44px)", display: "flex", flexDirection: "column", gap: 20, flex: "0 0 auto" }}>
+        <div className="hero-panel" style={{ background: "#0B1F3A" }}>
+          <div className="hero-content">
             <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 12, letterSpacing: ".24em", textTransform: "uppercase", color: "#BFA163" }}>
               <span style={{ width: 8, height: 8, background: "#BFA163", borderRadius: "50%" }} />
               I&apos;m a Property Owner
             </div>
-            <h1 style={{ fontFamily: "var(--font-playfair)", fontWeight: 400, fontSize: "clamp(34px,3.6vw,48px)", lineHeight: 1.08, color: "#fff", textWrap: "pretty" }}>
+            <h1 style={{ fontFamily: "var(--font-playfair)", fontWeight: 400, fontSize: "clamp(32px,3.4vw,46px)", lineHeight: 1.08, color: "#fff", textWrap: "pretty" }}>
               Your investment, run like a business.
             </h1>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "#C9CFDA", textWrap: "pretty", maxWidth: 520 }}>
               Leasing, rent collection, maintenance coordination and monthly owner statements across Irvine and Orange County. Full-service management from 7% of collected rent.
             </p>
-            <form action="/contact#analysis" method="get" style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: "auto" }}>
+            <form action="/contact#analysis" method="get" style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
               <input
                 name="address"
                 aria-label="Property address"
@@ -132,31 +126,31 @@ export default function HomePage() {
                 Free Rental Analysis
               </button>
             </form>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px 18px", fontSize: "12.5px", color: "#8F99AB" }}>
-              <span>412 units managed</span>
-              <span>98.6% occupancy</span>
-              <span>14 days to lease</span>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px 28px", paddingTop: 6, borderTop: "1px solid #1C2E4A", fontSize: "12.5px", color: "#8F99AB" }}>
+              <span><strong style={{ color: "#fff", fontWeight: 700, fontFamily: "var(--font-playfair)", fontSize: 16 }}>412</strong> units managed</span>
+              <span><strong style={{ color: "#fff", fontWeight: 700, fontFamily: "var(--font-playfair)", fontSize: 16 }}>98.6%</strong> occupancy</span>
+              <span><strong style={{ color: "#fff", fontWeight: 700, fontFamily: "var(--font-playfair)", fontSize: 16 }}>14</strong> days to lease</span>
             </div>
+          </div>
+          <div className="hero-photo" style={{ color: "#C9CFDA" }}>
+            <ImagePlaceholder onDark caption="Photo: managed Irvine single-family home at dusk" priority />
           </div>
         </div>
 
         {/* Tenant panel (champagne) */}
-        <div className="hero-panel" style={{ background: "#EFE6D3", display: "flex", flexDirection: "column" }}>
-          <div className="hero-photo" style={{ position: "relative" }}>
-            <ImagePlaceholder caption="Photo: resident at the door of an Irvine rental" />
-          </div>
-          <div style={{ padding: "clamp(28px,4vw,44px)", display: "flex", flexDirection: "column", gap: 20, flex: "0 0 auto" }}>
+        <div className="hero-panel" style={{ background: "#EFE6D3" }}>
+          <div className="hero-content">
             <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 12, letterSpacing: ".24em", textTransform: "uppercase", color: "#7A6230" }}>
               <span style={{ width: 8, height: 8, background: "#0B1F3A", borderRadius: "50%" }} />
               I&apos;m a Tenant / Resident
             </div>
-            <h2 style={{ fontFamily: "var(--font-playfair)", fontWeight: 400, fontSize: "clamp(34px,3.6vw,48px)", lineHeight: 1.08, color: "#0B1F3A", textWrap: "pretty" }}>
+            <h2 style={{ fontFamily: "var(--font-playfair)", fontWeight: 400, fontSize: "clamp(32px,3.4vw,46px)", lineHeight: 1.08, color: "#0B1F3A", textWrap: "pretty" }}>
               A home that&apos;s looked after.
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "#3F4A5E", textWrap: "pretty", maxWidth: 520 }}>
               Browse available rentals in Irvine and Orange County, pay rent online, and submit maintenance requests that get answered.
             </p>
-            <div style={{ display: "flex", gap: 10, marginTop: "auto", flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
               <Link href="/properties" className="h-navy" style={{ background: "#0B1F3A", color: "#fff", fontWeight: 700, fontSize: "13.5px", padding: "15px 22px", borderRadius: 999 }}>
                 Browse Available Rentals
               </Link>
@@ -164,11 +158,14 @@ export default function HomePage() {
                 Tenant Portal
               </Link>
             </div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px 18px", fontSize: "12.5px" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px 18px", paddingTop: 6, borderTop: "1px solid #DDD5C5", fontSize: "12.5px" }}>
               <Link href="/tenant-login" className="h-link-gold" style={{ color: "#5B6577", borderBottom: "1px solid #C9B98F" }}>Pay rent</Link>
               <Link href="/tenant-login#maintenance" className="h-link-gold" style={{ color: "#5B6577", borderBottom: "1px solid #C9B98F" }}>Request maintenance</Link>
               <Link href="/tenant-login" className="h-link-gold" style={{ color: "#5B6577", borderBottom: "1px solid #C9B98F" }}>Documents</Link>
             </div>
+          </div>
+          <div className="hero-photo">
+            <ImagePlaceholder caption="Photo: resident at the door of an Irvine rental" />
           </div>
         </div>
       </section>

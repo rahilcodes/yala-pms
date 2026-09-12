@@ -190,25 +190,33 @@ button {
   color: #7a6230 !important;
 }
 
-/* ---- Split hero: fills the viewport on desktop, stacks naturally on mobile ---- */
+/* ---- Split hero: content-led, sizes to its content so it always fits ---- */
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+}
+.hero-panel {
+  display: flex;
+  flex-direction: column;
+}
+.hero-content {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: clamp(28px, 4vw, 56px);
+}
 .hero-photo {
   position: relative;
-  height: clamp(200px, 26vw, 300px);
+  flex: 1 1 auto;
+  min-height: clamp(200px, 24vw, 280px);
 }
+/* On wider screens give the hero presence, capped so it never overflows */
 @media (min-width: 680px) {
   .hero-panel {
-    min-height: calc(100vh - 72px);
-    min-height: calc(100dvh - 72px);
+    min-height: min(64vh, 600px);
   }
   .hero-photo {
-    height: auto;
-    flex: 1 1 0;
-    min-height: 180px;
-  }
-}
-@media (min-width: 1000px) {
-  .hero-panel {
-    min-height: calc(100vh - 106px);
-    min-height: calc(100dvh - 106px);
+    min-height: 150px;
   }
 }

@@ -106,8 +106,8 @@ export default function HomePage() {
         style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(340px,1fr))" }}
       >
         {/* Owner panel (navy) */}
-        <div style={{ background: "#0B1F3A", display: "flex", flexDirection: "column" }}>
-          <div style={{ position: "relative", height: "clamp(200px,26vw,300px)", color: "#C9CFDA" }}>
+        <div className="hero-panel" style={{ background: "#0B1F3A", display: "flex", flexDirection: "column" }}>
+          <div className="hero-photo" style={{ position: "relative", color: "#C9CFDA" }}>
             <ImagePlaceholder onDark caption="Photo: managed Irvine single-family home at dusk" priority />
           </div>
           <div style={{ padding: "clamp(28px,4vw,44px)", display: "flex", flexDirection: "column", gap: 20, flex: 1 }}>
@@ -141,8 +141,8 @@ export default function HomePage() {
         </div>
 
         {/* Tenant panel (champagne) */}
-        <div style={{ background: "#EFE6D3", display: "flex", flexDirection: "column" }}>
-          <div style={{ position: "relative", height: "clamp(200px,26vw,300px)" }}>
+        <div className="hero-panel" style={{ background: "#EFE6D3", display: "flex", flexDirection: "column" }}>
+          <div className="hero-photo" style={{ position: "relative" }}>
             <ImagePlaceholder caption="Photo: resident at the door of an Irvine rental" />
           </div>
           <div style={{ padding: "clamp(28px,4vw,44px)", display: "flex", flexDirection: "column", gap: 20, flex: 1 }}>

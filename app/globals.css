@@ -189,3 +189,26 @@ button {
 .h-link-gold:hover {
   color: #7a6230 !important;
 }
+
+/* ---- Split hero: fills the viewport on desktop, stacks naturally on mobile ---- */
+.hero-photo {
+  position: relative;
+  height: clamp(200px, 26vw, 300px);
+}
+@media (min-width: 680px) {
+  .hero-panel {
+    min-height: calc(100vh - 72px);
+    min-height: calc(100dvh - 72px);
+  }
+  .hero-photo {
+    height: auto;
+    flex: 1 1 0;
+    min-height: 240px;
+  }
+}
+@media (min-width: 1000px) {
+  .hero-panel {
+    min-height: calc(100vh - 106px);
+    min-height: calc(100dvh - 106px);
+  }
+}

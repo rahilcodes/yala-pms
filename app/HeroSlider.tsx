@@ -11,6 +11,7 @@ type Slide = {
   title: [string, string, string];
   text: string;
   photo: string;
+  src: string;
   ctas: Cta[];
 };
 
@@ -20,6 +21,7 @@ const SLIDES: Slide[] = [
     title: ["Your investment, run like a ", "business", "."],
     text: "Leasing, rent collection, maintenance coordination and monthly owner statements. Full-service management from 7% of collected rent.",
     photo: "Photo: managed Irvine single-family home at dusk",
+    src: "/images/hero_home_dusk.jpg",
     ctas: [
       { label: "Free Rental Analysis", href: "/contact#analysis", variant: "gold" },
       { label: "See our services", href: "/services", variant: "outline" },
@@ -30,6 +32,7 @@ const SLIDES: Slide[] = [
     title: ["A home that's ", "looked after", "."],
     text: "Browse available rentals across Irvine and Orange County, pay rent online, and submit maintenance requests that get answered.",
     photo: "Photo: resident at the door of an Irvine rental",
+    src: "/images/hero_tenant_door.jpg",
     ctas: [
       { label: "Browse Available Rentals", href: "/properties", variant: "gold" },
       { label: "Tenant Portal", href: "/tenant-login", variant: "outline" },
@@ -40,6 +43,7 @@ const SLIDES: Slide[] = [
     title: ["412 homes, run to a ", "written standard", "."],
     text: "98.6% portfolio occupancy, 14 days average to lease, and no markup on maintenance invoices.",
     photo: "Photo: the YALA team at the Irvine office",
+    src: "/images/yala_team_office.jpg",
     ctas: [
       { label: "Free Rental Analysis", href: "/contact#analysis", variant: "gold" },
       { label: "Talk to a broker", href: "/contact", variant: "outline" },
@@ -143,7 +147,7 @@ export function HeroSlider() {
               aria-hidden={!isActive}
             >
               <div className="hero-slide-bg">
-                <ImagePlaceholder onDark hideCaption caption={s.photo} priority={i === 0} />
+                <ImagePlaceholder src={s.src} onDark hideCaption caption={s.photo} priority={i === 0} />
               </div>
               <div className="hero-slide-overlay" />
               <div className="hero-slide-num" aria-hidden="true">

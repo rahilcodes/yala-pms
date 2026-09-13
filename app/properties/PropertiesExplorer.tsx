@@ -14,18 +14,19 @@ type Property = {
   rent: string;
   status: "Available" | "Leased";
   note: string;
+  src: string;
 };
 
 const DATA: Property[] = [
-  { address: "24 Cabrillo Terrace", city: "Irvine", type: "Single-family", beds: 3, baths: 2.5, sqft: "1,980", rent: "$4,250/mo", status: "Leased", note: "Leased in 9 days · Woodbury" },
-  { address: "118 Rockview", city: "Irvine", type: "Condo", beds: 2, baths: 2, sqft: "1,240", rent: "$3,150/mo", status: "Leased", note: "Leased in 12 days · Quail Hill" },
-  { address: "2810 Peppertree Lane", city: "Tustin", type: "Single-family", beds: 4, baths: 3, sqft: "2,610", rent: "$5,400/mo", status: "Leased", note: "Leased in 16 days · Tustin Ranch" },
-  { address: "77 Waterspout", city: "Irvine", type: "Townhome", beds: 3, baths: 2.5, sqft: "1,720", rent: "$4,050/mo", status: "Available", note: "Available Oct 1 · Portola Springs" },
-  { address: "1406 W. Balboa Blvd, Unit B", city: "Newport Beach", type: "Duplex unit", beds: 2, baths: 1, sqft: "950", rent: "$3,900/mo", status: "Leased", note: "Leased in 11 days · Balboa Peninsula" },
-  { address: "3141 Sumatra Place", city: "Costa Mesa", type: "Fourplex (4 units)", beds: 2, baths: 1, sqft: "4 × 880", rent: "$2,650–2,795/mo", status: "Leased", note: "100% occupied since 2021" },
-  { address: "52 Silverleaf", city: "Irvine", type: "Detached condo", beds: 3, baths: 2.5, sqft: "1,850", rent: "$4,395/mo", status: "Available", note: "Available Sept 20 · Cypress Village" },
-  { address: "13802 Red Hill Ave", city: "Tustin", type: "Single-family", beds: 3, baths: 2, sqft: "1,540", rent: "$3,800/mo", status: "Leased", note: "Leased in 14 days · Old Town Tustin" },
-  { address: "2200 Newport Blvd, Unit 4", city: "Costa Mesa", type: "Condo", beds: 1, baths: 1, sqft: "720", rent: "$2,450/mo", status: "Leased", note: "Leased in 8 days · Eastside" },
+  { address: "24 Cabrillo Terrace", city: "Irvine", type: "Single-family", beds: 3, baths: 2.5, sqft: "1,980", rent: "$4,250/mo", status: "Leased", note: "Leased in 9 days · Woodbury", src: "/images/prop_cabrillo.jpg" },
+  { address: "118 Rockview", city: "Irvine", type: "Condo", beds: 2, baths: 2, sqft: "1,240", rent: "$3,150/mo", status: "Leased", note: "Leased in 12 days · Quail Hill", src: "/images/prop_rockview.jpg" },
+  { address: "2810 Peppertree Lane", city: "Tustin", type: "Single-family", beds: 4, baths: 3, sqft: "2,610", rent: "$5,400/mo", status: "Leased", note: "Leased in 16 days · Tustin Ranch", src: "/images/prop_peppertree.jpg" },
+  { address: "77 Waterspout", city: "Irvine", type: "Townhome", beds: 3, baths: 2.5, sqft: "1,720", rent: "$4,050/mo", status: "Available", note: "Available Oct 1 · Portola Springs", src: "/images/prop_waterspout.jpg" },
+  { address: "1406 W. Balboa Blvd, Unit B", city: "Newport Beach", type: "Duplex unit", beds: 2, baths: 1, sqft: "950", rent: "$3,900/mo", status: "Leased", note: "Leased in 11 days · Balboa Peninsula", src: "/images/prop_balboa.jpg" },
+  { address: "3141 Sumatra Place", city: "Costa Mesa", type: "Fourplex (4 units)", beds: 2, baths: 1, sqft: "4 × 880", rent: "$2,650–2,795/mo", status: "Leased", note: "100% occupied since 2021", src: "/images/prop_cabrillo.jpg" },
+  { address: "52 Silverleaf", city: "Irvine", type: "Detached condo", beds: 3, baths: 2.5, sqft: "1,850", rent: "$4,395/mo", status: "Available", note: "Available Sept 20 · Cypress Village", src: "/images/prop_waterspout.jpg" },
+  { address: "13802 Red Hill Ave", city: "Tustin", type: "Single-family", beds: 3, baths: 2, sqft: "1,540", rent: "$3,800/mo", status: "Leased", note: "Leased in 14 days · Old Town Tustin", src: "/images/hero_home_dusk.jpg" },
+  { address: "2200 Newport Blvd, Unit 4", city: "Costa Mesa", type: "Condo", beds: 1, baths: 1, sqft: "720", rent: "$2,450/mo", status: "Leased", note: "Leased in 8 days · Eastside", src: "/images/prop_rockview.jpg" },
 ];
 
 const CITIES = ["All", "Irvine", "Tustin", "Newport Beach", "Costa Mesa"];
@@ -105,7 +106,7 @@ export function PropertiesExplorer() {
           {shown.map((p) => (
             <article key={p.address} style={{ border: "1px solid #E6E2D9", display: "flex", flexDirection: "column", background: "#fff" }}>
               <div style={{ position: "relative", aspectRatio: "3 / 2" }}>
-                <ImagePlaceholder caption={`Photo: ${p.address}, ${p.city}`} />
+                <ImagePlaceholder src={p.src} caption={`Photo: ${p.address}, ${p.city}`} />
                 <div style={{ position: "absolute", top: 12, right: 12, pointerEvents: "none" }}>
                   <span style={tagStyle(p.status)}>{p.status}</span>
                 </div>

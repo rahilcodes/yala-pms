@@ -146,7 +146,7 @@ export default function ServicesPage() {
           </div>
           <div style={{ padding: 10, border: "1px solid rgba(191,161,99,.5)" }}>
             <div style={{ position: "relative", aspectRatio: "4 / 3", color: "#C9CFDA" }}>
-              <ImagePlaceholder onDark caption="Photo: property manager walking a unit with clipboard" />
+              <ImagePlaceholder src="/images/service_inspection.jpg" onDark caption="Photo: property manager walking a unit with clipboard" />
             </div>
           </div>
         </div>

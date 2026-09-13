@@ -93,9 +93,9 @@ const testimonials = [
 ];
 
 const leased = [
-  { slot: "home-prop-1", address: "24 Cabrillo Terrace", rent: "$4,250/mo", meta: "Irvine · 3 bd · 2.5 ba · Leased in 9 days", photo: "Photo: 24 Cabrillo Terrace exterior" },
-  { slot: "home-prop-2", address: "118 Rockview", rent: "$3,150/mo", meta: "Irvine · 2 bd · 2 ba · Leased in 12 days", photo: "Photo: 118 Rockview condo" },
-  { slot: "home-prop-3", address: "2810 Peppertree Lane", rent: "$5,400/mo", meta: "Tustin Ranch · 4 bd · 3 ba · Leased in 16 days", photo: "Photo: 2810 Peppertree Lane" },
+  { slot: "home-prop-1", address: "24 Cabrillo Terrace", rent: "$4,250/mo", meta: "Irvine · 3 bd · 2.5 ba · Leased in 9 days", photo: "Photo: 24 Cabrillo Terrace exterior", src: "/images/prop_cabrillo.jpg" },
+  { slot: "home-prop-2", address: "118 Rockview", rent: "$3,150/mo", meta: "Irvine · 2 bd · 2 ba · Leased in 12 days", photo: "Photo: 118 Rockview condo", src: "/images/prop_rockview.jpg" },
+  { slot: "home-prop-3", address: "2810 Peppertree Lane", rent: "$5,400/mo", meta: "Tustin Ranch · 4 bd · 3 ba · Leased in 16 days", photo: "Photo: 2810 Peppertree Lane", src: "/images/prop_peppertree.jpg" },
 ];
 
 export default function HomePage() {
@@ -220,7 +220,7 @@ export default function HomePage() {
             {leased.map((p) => (
               <Link key={p.slot} href="/properties" style={{ background: "#fff", border: "1px solid #E6E2D9", display: "flex", flexDirection: "column" }}>
                 <div style={{ position: "relative", aspectRatio: "3 / 2" }}>
-                  <ImagePlaceholder caption={p.photo} />
+                  <ImagePlaceholder src={p.src} caption={p.photo} />
                 </div>
                 <div style={{ padding: "20px 22px", display: "flex", flexDirection: "column", gap: 6 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", gap: 12 }}>

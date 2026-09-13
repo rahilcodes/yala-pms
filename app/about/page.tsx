@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 };
 
 const team = [
-  { slot: "about-team-1", name: "Butchi Reddy Yalamuri", role: "Principal & Broker of Record", bio: "Licensed California broker. Leads acquisitions across the YALA companies and personally reviews every rental analysis.", photo: "Portrait: Butchi Reddy Yalamuri" },
-  { slot: "about-team-2", name: "Elena Marquez", role: "Director of Property Management", bio: "Fourteen years managing Orange County residential portfolios. Oversees leasing, owner statements and compliance.", photo: "Portrait: Director of Property Management" },
-  { slot: "about-team-3", name: "Marcus Tran", role: "Maintenance Coordinator", bio: "Runs the 24/7 resident line and the vendor network. Former general contractor.", photo: "Portrait: Maintenance Coordinator" },
-  { slot: "about-team-4", name: "Sarah Whitfield", role: "Leasing Agent", bio: "Handles showings and screening. Leased 96 units in 2025 at a median 13 days on market.", photo: "Portrait: Leasing Agent" },
+  { slot: "about-team-1", name: "Butchi Reddy Yalamuri", role: "Principal & Broker of Record", bio: "Licensed California broker. Leads acquisitions across the YALA companies and personally reviews every rental analysis.", photo: "Portrait: Butchi Reddy Yalamuri", src: "/images/team_butchi.jpg" },
+  { slot: "about-team-2", name: "Elena Marquez", role: "Director of Property Management", bio: "Fourteen years managing Orange County residential portfolios. Oversees leasing, owner statements and compliance.", photo: "Portrait: Director of Property Management", src: "/images/team_elena.jpg" },
+  { slot: "about-team-3", name: "Marcus Tran", role: "Maintenance Coordinator", bio: "Runs the 24/7 resident line and the vendor network. Former general contractor.", photo: "Portrait: Maintenance Coordinator", src: "/images/team_marcus.jpg" },
+  { slot: "about-team-4", name: "Sarah Whitfield", role: "Leasing Agent", bio: "Handles showings and screening. Leased 96 units in 2025 at a median 13 days on market.", photo: "Portrait: Leasing Agent", src: "/images/team_sarah.jpg" },
 ];
 
 const compare: [string, string, string, string][] = [
@@ -51,7 +51,7 @@ export default function AboutPage() {
           </div>
           <div style={{ padding: 10, border: "1px solid #D6CFC1" }}>
             <div style={{ position: "relative", aspectRatio: "4 / 3" }}>
-              <ImagePlaceholder caption="Photo: YALA team at the Irvine office, 12 Proclamation Way" />
+              <ImagePlaceholder src="/images/yala_team_office.jpg" caption="Photo: YALA team at the Irvine office, 12 Proclamation Way" />
             </div>
           </div>
         </div>
@@ -83,7 +83,7 @@ export default function AboutPage() {
             {team.map((m) => (
               <div key={m.slot} style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                 <div style={{ position: "relative", aspectRatio: "4 / 5" }}>
-                  <ImagePlaceholder caption={m.photo} />
+                  <ImagePlaceholder src={m.src} caption={m.photo} />
                 </div>
                 <div>
                   <div style={{ fontFamily: "var(--font-playfair)", fontSize: 22, color: "#0B1F3A" }}>{m.name}</div>
